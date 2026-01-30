@@ -24,4 +24,8 @@
     font-family: "Aptos Light", "Aptos", "Segoe UI", system-ui, sans-serif;
     font-weight: 300;
   }
+
+  .brand-primary {
+    color: #0f3d2e; /* vert foncé – à ajuster */
+  }
 }
