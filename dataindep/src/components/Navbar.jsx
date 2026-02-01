@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+
 import { useState } from "react";
 
 export default function Navbar() {
@@ -13,8 +15,14 @@ export default function Navbar() {
 
           {/* GAUCHE */}
           <div className="flex items-center gap-10">
-            <Link href="/" className="text-lg font-bold">
-              LOGO
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/logo.svg"
+                alt="Data Indep"
+                width="140"
+                height="36"
+                style={{ height: "36px", width: "auto" }}
+              />
             </Link>
 
             <MenuButton label="Entreprise" setOpenMenu={setOpenMenu} />
@@ -28,11 +36,12 @@ export default function Navbar() {
               Se connecter
             </Link>
             <Link
-              href="/signup"
-              className="rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white hover:bg-green-700"
+              href="/who-are-you"
+              className="rounded-md bg-[#0f3d2e] px-4 py-2 text-sm font-medium text-white hover:bg-[#0c3326] transition-colors"
             >
               Créer mon compte
             </Link>
+
           </div>
         </div>
       </div>
@@ -66,7 +75,12 @@ function MegaMenu({ type, close }) {
       onMouseLeave={close}
       className="absolute left-0 top-full w-full bg-white shadow-lg"
     >
-      <div className="mx-auto max-w-6xl px-6 py-8">
+      <div
+        className="
+          mx-auto max-w-6xl px-6 py-8
+          font-aptos-light text-xl leading-relaxed text-zinc-600
+        "
+      >
         {type === "Entreprise" && <Entreprise />}
         {type === "Freelance" && <Freelance />}
         {type === "Ressources" && <Ressources />}
